@@ -9,7 +9,8 @@
   <body>
     <div id="slides" class="loading">
       <section class="center">
-        <h1>Lines</h1>
+        <h1>How To Draw a Line</h1>
+        <!-- How does one add character to the stock vector line? In this session, work towards some techniques you can use to add more expression to your lines in p5, live coding our way through the math and geometry of lines to adding texture in shaders. -->
         <p style="margin-top: -1em;"><em>Connecting the dots from default styles to textured art</em></p>
 <svg width="528" height="179" viewBox="0 0 528 179" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="528" height="179" fill="white"/>
@@ -42,7 +43,7 @@
         </div>
       </section>
 
-      <section>
+      <!--<section>
         <h2>Setup: making a line drawing app</h2>
         <div class="row fill">
           <div class="column fill">
@@ -93,7 +94,7 @@
 </svg>
           </div>
         </div>
-      </section>
+      </section>-->
 
       <section>
         <h2>Tip: smoothing</h2>
@@ -120,7 +121,7 @@
         </div>
       </section>
 
-      <section>
+      <!--<section>
         <h2>Can the width change over time?</h2>
         <ul>
           <li data-order="1">We can store a position <strong>and a thickness</strong> for each point in a stroke</li>
@@ -144,7 +145,7 @@
 <line x1="256.581" y1="40.897" x2="222.886" y2="58.2165" stroke="black" stroke-width="15" stroke-linecap="round"/>
 </svg>
         </div>
-      </section>
+      </section>-->
 
       <section>
         <h2>We'll do it ourselves!</h2>
@@ -158,7 +159,7 @@
         </div>
       </section>
 
-      <section>
+      <!--<section>
         <h2>Expanding the line</h2>
         <ul>
           <li data-order="1">The <strong>tangent</strong> is the angle between pairs of points</li>
@@ -194,158 +195,42 @@
 </g>
 </svg>
         </div>
+      </section>-->
+
+      <!--<section>
+        <h2>Smooth color interpolation in WebGL mode</h2>
+        <p>An underrated feature of WebGL mode: <strong>per-vertex colors</strong> that blend!</p>
+      </section>-->
+
+      <section class="center">
+        <h2>Since we're in WebGL mode anyway...</h2>
       </section>
 
       <section>
-        <h2>Adding texture</h2>
-        <div class="row fill">
-          <div class="column fill">
-            <p style="margin-bottom: 0">Some ideas:</p>
-            <ul>
-              <li data-order="1">Draw the stroke with a bunch of small circles
-                <ul><li data-order="2">Might be expensive to render</li></ul>
-              </li>
-              <li data-order="3">Mask the stroke with an image
-                <ul><li data-order="4">The mask doesn't move with the stroke</li></ul>
-              </li>
-              <li data-order="5">Use a shader</li>
-            </ul>
-          </div>
-          <div class="column fill center">
-<svg width="80%" viewBox="0 0 468 414" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="textures" clip-path="url(#clip0_9_2)">
-<rect width="468" height="414" fill="white"/>
-<g id="dots" data-order="1">
-<ellipse id="Ellipse 21" cx="54.0397" cy="107.581" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 26" cx="54.0397" cy="121.998" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 27" cx="87.9168" cy="121.998" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 28" cx="77.8428" cy="121.998" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 33" cx="87.9168" cy="131.376" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 34" cx="82.011" cy="129.422" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 29" cx="79.5803" cy="136.065" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 30" cx="75.4121" cy="131.376" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 31" cx="64.7259" cy="129.422" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 32" cx="65.3382" cy="116.959" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 22" cx="69.5064" cy="126.687" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 35" cx="86.1792" cy="138.8" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 36" cx="94.5156" cy="143.489" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 37" cx="92.085" cy="138.8" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 38" cx="97.9912" cy="131.376" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 39" cx="97.9912" cy="124.732" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 40" cx="92.085" cy="129.422" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 41" cx="94.5156" cy="124.732" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 42" cx="112.234" cy="126.687" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 43" cx="103.897" cy="129.422" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 44" cx="106.328" cy="136.065" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 45" cx="99.729" cy="138.8" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 46" cx="102.159" cy="143.489" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 47" cx="112.234" cy="143.489" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 48" cx="117.737" cy="134.437" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 49" cx="110.496" cy="141.081" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 50" cx="114.954" cy="145.77" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 51" cx="134.934" cy="148.77" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 52" cx="125.028" cy="148.178" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 55" cx="146.034" cy="145.77" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 56" cx="151.674" cy="147.489" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 57" cx="176.095" cy="124.732" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 60" cx="161.703" cy="145.489" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 61" cx="185.768" cy="141.489" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 62" cx="173.665" cy="143.489" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 63" cx="183.337" cy="133.784" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 66" cx="195.377" cy="135.8" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 67" cx="218.006" cy="98.1336" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 68" cx="209.38" cy="102.588" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 69" cx="201.635" cy="109.685" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 70" cx="197.051" cy="116.982" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 71" cx="211.647" cy="121.998" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 73" cx="221.32" cy="115.027" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 74" cx="229.947" cy="105.322" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 75" cx="218.889" cy="92.8827" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 80" cx="233.783" cy="90.2751" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 76" cx="226.633" cy="85.9124" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 77" cx="238.573" cy="99.9801" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 78" cx="247.2" cy="93.1869" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 81" cx="238.573" cy="78.7237" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 84" cx="259.285" cy="67.786" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 85" cx="269.757" cy="61.1601" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 86" cx="271.877" cy="73.8651" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 82" cx="248.58" cy="73.4727" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 88" cx="290.469" cy="70.8651" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 89" cx="281.842" cy="69.0186" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 83" cx="255.827" cy="85.9124" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 79" cx="263.025" cy="80.5701" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 90" cx="316.766" cy="63.7677" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 91" cx="306.061" cy="61.1601" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 92" cx="297.434" cy="61.1601" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 93" cx="303.983" cy="70.8651" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 94" cx="316.252" cy="70.8651" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 95" cx="328.202" cy="63.7677" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 96" cx="326.54" cy="70.8651" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 97" cx="340.984" cy="66.5024" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 98" cx="337.943" cy="70.8651" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 100" cx="348.682" cy="73.4726" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 99" cx="349.611" cy="69.0186" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 87" cx="283.504" cy="58.081" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 72" cx="193.395" cy="119.344" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 65" cx="203.021" cy="131.049" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 64" cx="186.75" cy="121.998" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 58" cx="154.674" cy="129.095" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 59" cx="165.039" cy="127.013" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 53" cx="132.208" cy="133.784" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 54" cx="144.712" cy="131.703" rx="8.62669" ry="9.70498" fill="black"/>
-<ellipse id="Ellipse 23" cx="38.2352" cy="95.7415" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 24" cx="45.7033" cy="107.581" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 25" cx="29.3343" cy="93.8998" rx="4.16821" ry="4.68921" fill="black"/>
-<ellipse id="Ellipse 101" cx="396.083" cy="99.6731" rx="4.16821" ry="4.68921" transform="rotate(176.484 396.083 99.6731)" fill="black"/>
-<ellipse id="Ellipse 102" cx="395.199" cy="85.2835" rx="4.16821" ry="4.68921" transform="rotate(176.484 395.199 85.2835)" fill="black"/>
-<ellipse id="Ellipse 103" cx="364.515" cy="85.1426" rx="4.16821" ry="4.68921" transform="rotate(176.484 364.515 85.1426)" fill="black"/>
-<ellipse id="Ellipse 104" cx="371.44" cy="86.7432" rx="4.16821" ry="4.68921" transform="rotate(176.484 371.44 86.7432)" fill="black"/>
-<ellipse id="Ellipse 105" cx="360.81" cy="78.0002" rx="4.16821" ry="4.68921" transform="rotate(176.484 360.81 78.0002)" fill="black"/>
-<ellipse id="Ellipse 106" cx="366.825" cy="79.5888" rx="4.16821" ry="4.68921" transform="rotate(176.484 366.825 79.5888)" fill="black"/>
-<ellipse id="Ellipse 107" cx="368.843" cy="72.8086" rx="4.16821" ry="4.68921" transform="rotate(176.484 368.843 72.8086)" fill="black"/>
-<ellipse id="Ellipse 108" cx="373.291" cy="77.2334" rx="4.16821" ry="4.68921" transform="rotate(176.484 373.291 77.2334)" fill="black"/>
-<ellipse id="Ellipse 109" cx="384.077" cy="78.5289" rx="4.16821" ry="4.68921" transform="rotate(176.484 384.077 78.5289)" fill="black"/>
-<ellipse id="Ellipse 110" cx="384.23" cy="91.0051" rx="4.16821" ry="4.68921" transform="rotate(176.484 384.23 91.0051)" fill="black"/>
-<ellipse id="Ellipse 111" cx="379.474" cy="81.5516" rx="4.16821" ry="4.68921" transform="rotate(176.484 379.474 81.5516)" fill="black"/>
-<ellipse id="Ellipse 112" cx="362.089" cy="70.4836" rx="4.16821" ry="4.68921" transform="rotate(176.484 362.089 70.4836)" fill="black"/>
-<ellipse id="Ellipse 113" cx="353.481" cy="66.3145" rx="4.16821" ry="4.68921" transform="rotate(176.484 353.481 66.3145)" fill="black"/>
-<ellipse id="Ellipse 114" cx="356.195" cy="70.8458" rx="4.16821" ry="4.68921" transform="rotate(176.484 356.195 70.8458)" fill="black"/>
-<ellipse id="Ellipse 115" cx="350.755" cy="78.618" rx="4.16821" ry="4.68921" transform="rotate(176.484 350.755 78.618)" fill="black"/>
-<ellipse id="Ellipse 116" cx="357.929" cy="68.1925" rx="4.16821" ry="4.68921" transform="rotate(176.484 357.929 68.1925)" fill="black"/>
-<ellipse id="Ellipse 117" cx="356.77" cy="80.2066" rx="4.16821" ry="4.68921" transform="rotate(176.484 356.77 80.2066)" fill="black"/>
-<ellipse id="Ellipse 118" cx="355.62" cy="82.427" rx="4.16821" ry="4.68921" transform="rotate(176.484 355.62 82.427)" fill="black"/>
-<ellipse id="Ellipse 121" cx="342.147" cy="74.4488" rx="4.16821" ry="4.68921" transform="rotate(176.484 342.147 74.4488)" fill="black"/>
-<ellipse id="Ellipse 122" cx="348.565" cy="71.3145" rx="4.16821" ry="4.68921" transform="rotate(176.484 348.565 71.3145)" fill="black"/>
-<ellipse id="Ellipse 123" cx="345.852" cy="66.7832" rx="4.16821" ry="4.68921" transform="rotate(176.484 345.852 66.7832)" fill="black"/>
-<ellipse id="Ellipse 124" cx="335.796" cy="67.401" rx="4.16821" ry="4.68921" transform="rotate(176.484 335.796 67.401)" fill="black"/>
-<ellipse id="Ellipse 126" cx="337.679" cy="69.6981" rx="8.62669" ry="9.70498" transform="rotate(176.484 337.679 69.6981)" fill="black"/>
-<ellipse id="Ellipse 127" cx="332.941" cy="65.2911" rx="8.62669" ry="9.70498" transform="rotate(176.484 332.941 65.2911)" fill="black"/>
-<ellipse id="Ellipse 128" cx="412.583" cy="110.521" rx="4.16821" ry="4.68921" transform="rotate(176.484 412.583 110.521)" fill="black"/>
-<ellipse id="Ellipse 129" cx="404.403" cy="99.1618" rx="4.16821" ry="4.68921" transform="rotate(176.484 404.403 99.1618)" fill="black"/>
-<ellipse id="Ellipse 130" cx="421.581" cy="111.813" rx="4.16821" ry="4.68921" transform="rotate(176.484 421.581 111.813)" fill="black"/>
-</g>
-<g id="Group 1" data-order="3">
-<path id="Vector 5" d="M65.2531 328.782L30.2478 289.275L34.3442 283.521L74.5631 311.522L129.305 321.494L191.123 311.522L221.288 279.685L279.009 245.547L351.999 255.904L397.432 279.685L433.182 306.535L429.085 314.59L388.866 289.275L346.413 275.082H281.988L241.769 306.535L197.082 346.427L119.623 352.18L65.2531 328.782Z" fill="black"/>
-<g id="image 1" style="mix-blend-mode:lighten">
-<rect x="9.27463" y="214.757" width="431.763" height="199.538" fill="url(#pattern0)"/>
-</g>
-</g>
-</g>
-<defs>
-<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_9_2" transform="matrix(0.00159744 0 0 0.00345656 0 -0.108355)"/>
-</pattern>
-<clipPath id="clip0_9_2">
-<rect width="468" height="414" fill="white"/>
-</clipPath>
-<image id="image0_9_2" data-name="image(edit).png" width="626" height="352" xlink:href="img/texture.png"/>
-</defs>
-</svg>
-          </div>
+        <h2>Texture coordiantes</h2>
+        <ul>
+          <li>Adds an additional coordinate (u, v) to every vertex</li>
+          <li>Represents a spot on an image (between 0 and 1 on each axis)</li>
+          <li>Use it to pin (and distort) an image to a mesh</li>
+        </ul>
+        <div class="row center fill">
+          <img src="img/uvs.png" width="80%" />
         </div>
       </section>
 
       <section>
+        <h2>Adding dynamic texture</h2>
+        <ul>
+          <li>Only so much we can do with a fixed texture</li>
+          <li data-order="1">What if we could use code?</li>
+          <li data-order="2">Sounds like a job for a...</li>
+        </ul>
+        <div class="row fill center">
+          <img data-order="3" src="img/wordart.png" width="60%" />
+        </div>
+      </section>
+
+      <!--<section>
         <h2>WebGL???</h2>
         <ul>
           <li data-order="1"><strong>What?</strong>
@@ -363,6 +248,41 @@
           </li>
           <li data-order="8"><strong>How?</strong></li>
         </ul>
+      </section>-->
+
+      <section>
+        <h2>What are shaders?</h2>
+        <p style="margin-bottom: 0">Shaders are just <strong>programs that compute the position and color of shapes</strong> on your screen</p>
+        <p>Sometimes you see people online that do crazy stuff in shaders:</p>
+        <div class="row fill center">
+          <div class="column fill center">
+            <!--<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The teaser for <a href="https://t.co/pAdQ1KCi7l">https://t.co/pAdQ1KCi7l</a> <a href="https://t.co/34H3VMdNbb">pic.twitter.com/34H3VMdNbb</a></p>&mdash; inigo quilez (@iquilezles) <a href="https://twitter.com/iquilezles/status/1514661326332698642?ref_src=twsrc%5Etfw">April 14, 2022</a></blockquote> <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+<iframe id="twitter-widget-0" scrolling="no" allowtransparency="true" allowfullscreen="true" class="" style="position: static; visibility: visible; width: 550px; height: 528px; display: block; flex-grow: 1;" title="Twitter Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfdGltZWxpbmVfbGlzdCI6eyJidWNrZXQiOltdLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2ZvbGxvd2VyX2NvdW50X3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9iYWNrZW5kIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19yZWZzcmNfc2Vzc2lvbiI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfbWl4ZWRfbWVkaWFfMTU4OTciOnsiYnVja2V0IjoidHJlYXRtZW50IiwidmVyc2lvbiI6bnVsbH0sInRmd19leHBlcmltZW50c19jb29raWVfZXhwaXJhdGlvbiI6eyJidWNrZXQiOjEyMDk2MDAsInZlcnNpb24iOm51bGx9LCJ0ZndfZHVwbGljYXRlX3NjcmliZXNfdG9fc2V0dGluZ3MiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3ZpZGVvX2hsc19keW5hbWljX21hbmlmZXN0c18xNTA4MiI6eyJidWNrZXQiOiJ0cnVlX2JpdHJhdGUiLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2xlZ2FjeV90aW1lbGluZV9zdW5zZXQiOnsiYnVja2V0Ijp0cnVlLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3R3ZWV0X2VkaXRfZnJvbnRlbmQiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfX0%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1514661326332698642&amp;lang=en&amp;origin=http%3A%2F%2Flocalhost%3A8000%2Fslides%2F%239&amp;sessionId=145962b09cdc1f0822a64e195df028562397ca87&amp;theme=light&amp;widgetsVersion=aaf4084522e3a%3A1674595607486&amp;width=550px" data-tweet-id="1514661326332698642" frameborder="0"></iframe>
+          </div>
+          <div class="column fill center">
+            <!--<blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;Reclaim the streets&quot; winning shader live coded in 25 minutes at Revision 2021 shader showdown semi final.<br>Congrats to Blackle for winning the final. Designed in several hours before. <a href="https://twitter.com/hashtag/shadercoding?src=hash&amp;ref_src=twsrc%5Etfw">#shadercoding</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://twitter.com/hashtag/generativeart?src=hash&amp;ref_src=twsrc%5Etfw">#generativeart</a> <a href="https://twitter.com/hashtag/ProceduralArt?src=hash&amp;ref_src=twsrc%5Etfw">#ProceduralArt</a> <a href="https://twitter.com/hashtag/digitalart?src=hash&amp;ref_src=twsrc%5Etfw">#digitalart</a> <a href="https://twitter.com/hashtag/gamedevs?src=hash&amp;ref_src=twsrc%5Etfw">#gamedevs</a> <a href="https://twitter.com/hashtag/demoscene?src=hash&amp;ref_src=twsrc%5Etfw">#demoscene</a> <a href="https://t.co/r5UTJ0iy4Z">pic.twitter.com/r5UTJ0iy4Z</a></p>&mdash; evvvvil (@evvvvil) <a href="https://twitter.com/evvvvil/status/1380212727608655876?ref_src=twsrc%5Etfw">April 8, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+<iframe id="twitter-widget-0" scrolling="no" allowtransparency="true" allowfullscreen="true" class="" style="position: static; visibility: visible; width: 550px; height: 528px; display: block; flex-grow: 1;" title="Twitter Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfdGltZWxpbmVfbGlzdCI6eyJidWNrZXQiOltdLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2ZvbGxvd2VyX2NvdW50X3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9iYWNrZW5kIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19yZWZzcmNfc2Vzc2lvbiI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfbWl4ZWRfbWVkaWFfMTU4OTciOnsiYnVja2V0IjoidHJlYXRtZW50IiwidmVyc2lvbiI6bnVsbH0sInRmd19leHBlcmltZW50c19jb29raWVfZXhwaXJhdGlvbiI6eyJidWNrZXQiOjEyMDk2MDAsInZlcnNpb24iOm51bGx9LCJ0ZndfZHVwbGljYXRlX3NjcmliZXNfdG9fc2V0dGluZ3MiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3ZpZGVvX2hsc19keW5hbWljX21hbmlmZXN0c18xNTA4MiI6eyJidWNrZXQiOiJ0cnVlX2JpdHJhdGUiLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2xlZ2FjeV90aW1lbGluZV9zdW5zZXQiOnsiYnVja2V0Ijp0cnVlLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3R3ZWV0X2VkaXRfZnJvbnRlbmQiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfX0%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1380212727608655876&amp;lang=en&amp;origin=http%3A%2F%2Flocalhost%3A8000%2Fslides%2F%239&amp;sessionId=145962b09cdc1f0822a64e195df028562397ca87&amp;theme=light&amp;widgetsVersion=aaf4084522e3a%3A1674595607486&amp;width=550px" data-tweet-id="1380212727608655876" frameborder="0"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Shaders don't have to be that crazy!</h2>
+        <p>They're just a high-performance way of <strong>positioning shape vertices</strong> and <strong>coloring them on screen</strong></p>
+        <div class="row fill center">
+          <div class="column fill center">
+            <img src="img/sphere.png" width="100%" />
+            <p></p>
+          </div>
+          <div class="column fill center" data-order="1">
+            <img src="img/vertshader.gif" width="100%" />
+            <p>Adjust vertex positions</p>
+          </div>
+          <div class="column fill center" data-order="2">
+            <img src="img/fragshader.gif" width="100%" />
+            <p>Adjust pixel colors</p>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -442,6 +362,77 @@
             <p data-order="3" style="width: 60%">The <strong>fragment shader</strong> runs in parallel for each pixel in each triangle calculating what color it should be</p>
           </div>
         </div>
+      </section>
+
+      <section>
+        <h2>Boilerplate</h2>
+        <div class="row aligntop">
+          <div class="column fill">
+            <p><strong>Vertex shader:</strong></p>
+            <pre>precision highp float;
+
+attribute vec3 aPosition;
+attribute vec2 aTexCoord;
+attribute vec4 aVertexColor;
+
+uniform mat4 uModelViewMatrix;
+uniform mat4 uProjectionMatrix;
+
+varying vec2 vTexCoord;
+varying vec4 vVertexColor;
+
+void main() {
+    // Apply the camera transform
+    vec4 viewModelPosition =
+      uModelViewMatrix *
+      vec4(aPosition, 1.0);
+
+    // Tell WebGL where the vertex goes
+    gl_Position =
+      uProjectionMatrix *
+      viewModelPosition;  
+
+    // Pass along data to the fragment shader
+    vTexCoord = aTexCoord;
+    vVertexColor = aVertexColor;
+}
+            </pre>
+          </div>
+          <div class="column fill">
+            <p><strong>Fragment shader:</strong></p>
+            <pre>precision highp float;
+
+varying vec2 vTexCoord;
+varying vec4 vVertexColor;
+
+void main() {
+  // Tell WebGL what color to make the pixel
+  gl_FragColor = vVertexColor;
+}</pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Useful functions for GLSL: noise</h2>
+        <p>Courtesy of Patricio Gonzalez Vivo from <a href="https://thebookofshaders.com/">The Book of Shaders</a></p>
+        <pre>float rand(vec2 n) {
+  return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+}
+
+float rand(float n){return fract(sin(n) * 43758.5453123);}
+
+float noise(float p){
+  float fl = floor(p);
+  float fc = fract(p);
+  return mix(rand(fl), rand(fl + 1.0), fc);
+}
+
+float noise(vec2 n) {
+  const vec2 d = vec2(0.0, 1.0);
+  vec2 b = floor(n), f = smoothstep(vec2(0.0), vec2(1.0), fract(n));
+  return mix(mix(rand(b), rand(b + d.yx), f.x), mix(rand(b + d.xy), rand(b + d.yy), f.x), f.y);
+}</pre>
       </section>
 
     </div>
