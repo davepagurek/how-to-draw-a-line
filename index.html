@@ -1,0 +1,94 @@
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>How To Draw a Line</title>
+  <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+<body>
+  <h1>How To Draw a Line</h1>
+
+  <div class="center">
+<svg width="528" height="179" viewBox="0 0 528 179" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="528" height="179" fill="white"/>
+<path d="M82.7471 67.1682C82.7471 62.9349 70.3333 59.8154 66.5215 59.8154C61.6694 59.8154 56.1492 58.5394 52.1419 61.8579C39.6042 72.2405 35.7768 87.8113 37.3251 104.085C37.7977 109.052 39.8865 115.464 44.5635 117.922C53.1882 122.455 65.8569 125.804 75.7516 125.99C82.1902 126.111 86.9627 124.779 93.0946 122.875C99.1007 121.01 103.537 116.524 109.32 114.093C119.688 109.734 130.417 105.24 140.217 99.5916C145.51 96.5408 149.987 92.0144 155.325 89.0221C160.167 86.308 165.793 84.6625 170.968 82.7927C182.229 78.7238 193.349 72.7557 205.168 70.8445C209.776 70.0993 214.096 69.9254 218.77 69.9254C219.873 69.9254 224.029 69.2415 225.086 70.1297C227.452 72.1193 228.276 74.4838 229.458 77.2782C233.17 86.0578 219.113 90.1454 213.864 90.1454C208.165 90.1454 203.768 87.3163 198.658 84.6309C194.532 82.4624 191.308 78.0388 187.096 76.5633C181.379 74.56 176.419 70.9059 170.482 69.4659C161.269 67.2312 151.918 66.0007 142.792 63.4918C134.954 61.3374 127.172 60.7345 119.133 60.7345C115.373 60.7345 107.099 59.7589 104.608 63.0323C103.011 65.1302 100.915 64.3947 101.11 68.0873C101.315 71.9653 108.932 75.2613 111.992 75.44C119.265 75.8646 124.154 76.0046 131.473 74.0103C135.464 72.9226 141.167 72.7287 144.735 70.385C148.346 68.0129 152.616 65.5068 156.491 63.645C172.316 56.0414 187.663 50.6245 205.411 50.6245C215.179 50.6245 227.547 50.8255 236.648 55.4242C243.16 58.7149 250.596 60.6897 255.885 66.2491C262.208 72.8947 267.097 81.3662 269.05 90.605C270.198 96.0359 273.371 100.667 274.054 106.485C275.646 120.039 280.974 135.756 278.426 149.478C276.101 162.005 258.887 156.067 252.582 151.724C248.173 148.688 249.884 139.087 250.639 134.926C252.649 123.83 256.773 113.226 262.103 103.421C267.669 93.1833 274.979 84.1821 280.952 74.3166C285.012 67.6106 290.436 65.8931 297.275 64.6151C307.163 62.7675 316.601 63.6015 326.277 66.198C334.358 68.3666 342.572 70.055 350.664 72.2232C358.063 74.2054 366.551 74.6667 373.448 78.1462C380.433 81.67 390.083 82.092 397.641 82.5885C407.386 83.2287 416.459 83.8507 425.185 79.0653C429.989 76.4311 435.485 72.7983 433.007 65.6364C431.608 61.5928 430.103 58.7869 426.594 56.5476C421.669 53.4048 412.525 51.5436 406.725 51.5436C406.725 51.5436 391.615 54.1628 380.986 59.8154C370.356 65.4681 358.784 74.9625 347.312 80.7503C341.578 83.6434 336.416 86.5489 331.184 90.4518C328.025 92.8082 324.768 96.157 320.982 97.2939C317.178 98.4363 310.526 101.349 307.04 98.4172C304.963 96.6715 305.154 92.888 306.991 91.0645C310.021 88.057 316.573 88.7548 320.302 89.2774C326.46 90.1404 332.06 93.6621 337.742 96.2216C359.216 105.895 381.437 113.406 404.636 117.003C413.775 118.42 423.24 117.718 432.472 117.718C442.793 117.718 452.14 114.531 461.766 111.336C475.817 106.672 492.037 102.231 495.48 85.0394C497.766 73.629 500.683 62.017 493.148 52.0542C485.298 41.6731 476.561 35 463.563 35C461.71 35 457.157 36.2698 455.936 37.553C454.236 39.3399 450.879 44.1935 449.135 45.11" stroke="black" stroke-width="5" stroke-linecap="round"/>
+</svg>
+  </div>
+  
+  <ul>
+  <li><a href='slides'>View Slides</a></li>
+  <li><a href='https://thebookofshaders.com/'>The Book of Shaders</a></li>
+  </ul>
+
+  <h2>Shader Boilerplate</h2>
+  <h3>.vert file</h3>
+  <div class="sourceCode">
+    <pre class="sourceCode">precision highp float;
+
+attribute vec3 aPosition;
+attribute vec2 aTexCoord;
+attribute vec4 aVertexColor;
+
+uniform mat4 uModelViewMatrix;
+uniform mat4 uProjectionMatrix;
+
+varying vec2 vTexCoord;
+varying vec4 vVertexColor;
+
+void main() {
+    // Apply the camera transform
+    vec4 viewModelPosition =
+      uModelViewMatrix *
+      vec4(aPosition, 1.0);
+
+    // Tell WebGL where the vertex goes
+    gl_Position =
+      uProjectionMatrix *
+      viewModelPosition;  
+
+    // Pass along data to the fragment shader
+    vTexCoord = aTexCoord;
+    vVertexColor = aVertexColor;
+}</pre>
+  </div>
+
+  <h3>.frag file</h3>
+  <div class="sourceCode">
+    <pre class="sourceCode">precision highp float;
+
+varying vec2 vTexCoord;
+varying vec4 vVertexColor;
+
+void main() {
+  // Tell WebGL what color to make the pixel
+  gl_FragColor = vVertexColor;
+}</pre></div>
+
+<h2>Useful functions for GLSL: noise</h2>
+        <p>Courtesy of Patricio Gonzalez Vivo from <a href="https://thebookofshaders.com/">The Book of Shaders</a></p>
+        <div class="sourceCode">
+        <pre class="sourceCode">float rand(vec2 n) {
+  return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+}
+
+float rand(float n){return fract(sin(n) * 43758.5453123);}
+
+float noise(float p){
+  float fl = floor(p);
+  float fc = fract(p);
+  return mix(rand(fl), rand(fl + 1.0), fc);
+}
+
+float noise(vec2 n) {
+  const vec2 d = vec2(0.0, 1.0);
+  vec2 b = floor(n), f = smoothstep(vec2(0.0), vec2(1.0), fract(n));
+  return mix(mix(rand(b), rand(b + d.yx), f.x), mix(rand(b + d.xy), rand(b + d.yy), f.x), f.y);
+}</pre></div>
+
+  <div id="footer">
+    By <a href="http://www.davepagurek.com">Dave Pagurek</a>
+  </div>
+
+</body>
+</html>
